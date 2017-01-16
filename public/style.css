@@ -1,6 +1,12 @@
 h1.new  {
   text-align: center;
 }
+
+.gridfix {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .smallCenter {
   width: 30%;
   margin: 25px auto;
