@@ -1,43 +1,70 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
 var app = express();
+
+
+// ===============================================
+//                  MONGODB
+// ===============================================
+mongoose.connect("mongodb://localhost/yelp_camp");
+// Schema
+var campgroundsSchema = new mongoose.Schema({
+  name: String,
+  image: String,
+  description: String
+});
+//Compile schema into a modell
+var Campground = mongoose.model("Campground", campgroundsSchema);
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
-var camps = [
-  {name: "Salmon Creek", image: "https://farm2.staticflickr.com/1075/1132747626_f7adec63dd.jpg"},
-  {name: "Granite Hill", image: "https://farm2.staticflickr.com/1086/882244782_d067df2717.jpg"},
-  {name: "Mountain Goat's Rest", image: "https://farm5.staticflickr.com/4016/4270995674_9fd4546267.jpg"},
-  {name: "Salmon Creek", image: "https://farm2.staticflickr.com/1075/1132747626_f7adec63dd.jpg"},
-  {name: "Granite Hill", image: "https://farm2.staticflickr.com/1086/882244782_d067df2717.jpg"},
-  {name: "Mountain Goat's Rest", image: "https://farm5.staticflickr.com/4016/4270995674_9fd4546267.jpg"}
-];
-
 
 app.get("/", function(req, res) {
   res.render("landing");
 });
 
 app.get("/campgrounds", function(req, res){
-  res.render("campgrounds", {camps:camps});
+  Campground.find({}, function(err, campgrounds) {
+    if(err) {
+      console.log(err);
+    }else {
+      res.render("index", {campgrounds:campgrounds});
+    }
+  });
 });
 
 app.post("/campgrounds", function(req, res) {
   var name = req.body.name;
   var image = req.body.imageUrl;
+  var description = req.body.description;
 
-  var newCampground = {name:name, image, image};
-  camps.push(newCampground);
-
-  res.redirect("/campgrounds");
+  var newCampground = {name:name, image: image, description: description};
+  Campground.create(newCampground, function(err, newlyCreated) {
+    if(err) {
+      console.log(err);
+    }else {
+      res.redirect("/campgrounds");
+    }
+  });
 });
+
 
 app.get("/campgrounds/new", function(req, res){
   res.render("new.ejs");
 });
 
+app.get("/campgrounds/:id", function(req, res){
+  var id = req.params.id;
+  Campground.findById(id, function(err, foundCampground) {
+    if(err) {
+      console.log(err);
+    }else {
+      res.render("show", {campground: foundCampground});
+    }
+  });
+});
 
 
 
