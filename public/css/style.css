@@ -2,6 +2,10 @@ h1.new  {
   text-align: center;
 }
 
+.inlineButton {
+  display: inline;
+}
+
 .gridfix {
   display: flex;
   flex-wrap: wrap;
