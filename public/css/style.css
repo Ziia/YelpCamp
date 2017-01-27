@@ -2,6 +2,13 @@ h1.new  {
   text-align: center;
 }
 
+a.register {
+  /*padding: 15px;*/
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
 .inlineButton {
   display: inline;
 }
