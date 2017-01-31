@@ -1,12 +1,63 @@
-h1.new  {
+body {
+  background: #141E30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
+}
+
+h2, h3 {
+  margin: 0 0 15px 0;
+}
+
+h2.new  {
   text-align: center;
+  color: white;
+}
+
+h2.login {
+  text-align: center;
+  color: #243B55;
 }
 
 a.register {
   /*padding: 15px;*/
-  display: block;
-  margin: 10px auto;
+  /*display: block;*/
+  margin: 10px 10px;
   text-align: center;
+  text-decoration: underline;
+}
+
+#signup-content {
+  padding:45px;
+  background: white;
+}
+
+#signup {
+  padding: 25px;
+  background: #F9F9FB;
+  border: 1px solid #E4E4E7;
+  border-radius: 5px;
+}
+
+#benefits{
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+#benefits p{
+  margin: 0 0 15px 0;
+}
+.btn {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+
+.tos {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .inlineButton {
@@ -18,9 +69,25 @@ a.register {
   flex-wrap: wrap;
 }
 
+.padFix {
+  padding:25px;
+}
+
 .smallCenter {
   width: 30%;
   margin: 25px auto;
+  /*padding: 25px;*/
+  background: white;
+  border: 1px solid #E4E4E7;
+  border-radius: 5px;
+}
+
+.panel-footer {
+  padding: 20px;
+  display: block;
+  font-size: 17px;
+  color: #878797;
+  font-weight: 100;
 }
 
 .caption-full {
