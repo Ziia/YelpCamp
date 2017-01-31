@@ -17,12 +17,12 @@ var Campground = require("./models/campground");
 var campgroundRoutes = require("./routes/campgrounds");
 var commentRoutes = require("./routes/comments");
 var authRoutes = require("./routes/auth");
-
 // seedDB();
 
 var app = express();
-// mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://yelpadmin:ambalfa1@ds035059.mlab.com:35059/yelpcamp");
+
+var dbUrl = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(dbUrl);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -30,7 +30,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-// PASSPOR CONFIG
+// PASSPORT CONFIG
 app.use(require("express-session")({
   secret: "July 2017",
   resave: false,
