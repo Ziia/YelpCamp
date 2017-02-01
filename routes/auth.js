@@ -15,7 +15,7 @@ router.get("/register", function(req, res){
 
 //Handle sign up
 router.post("/register", function(req, res){
-  var newUser = new User({username: req.body.username.toLowerCase()});
+  var newUser = new User({username: req.body.username});
 
   User.register(newUser, req.body.password, function(err, user){
     if(err){
@@ -35,7 +35,7 @@ router.get("/login", function(req, res){
 });
 
 // Handle Login
-router.post("/login", usernameToLowerCase, passport.authenticate("local", {
+router.post("/login", passport.authenticate("local", {
   successRedirect: "/campgrounds",
   failureRedirect: "/login"
   }), function(req, res){
