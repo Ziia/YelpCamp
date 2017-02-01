@@ -40,22 +40,22 @@ body {
 }
 
 .slideshow li:nth-child(1) {
-  background-image: url(http://i.imgur.com/K3mPv14.jpg)
+  background-image: url(https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg)
 }
 .slideshow li:nth-child(2) {
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2016/02/15/11/43/treadmill-1201014_960_720.jpg);
   animation-delay: 10s;
 }
 .slideshow li:nth-child(3) {
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(https://static.pexels.com/photos/171568/pexels-photo-171568.jpeg);
   animation-delay: 20s;
 }
 .slideshow li:nth-child(4) {
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(https://images.pexels.com/photos/35655/football-american-game-runner.jpg);
   animation-delay: 30s;
 }
 .slideshow li:nth-child(5) {
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(https://images.pexels.com/photos/128432/pexels-photo-128432.jpeg);
   animation-delay: 40s;
 }
 

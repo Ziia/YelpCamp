@@ -56,5 +56,5 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use(authRoutes);
 
 app.listen(process.env.PORT || 3000, function(){
-  console.log("YelpCamp ALIVE!");
+  console.log("LetBet ALIVE!");
 });
