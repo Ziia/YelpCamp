@@ -27,6 +27,9 @@ a.register {
   text-decoration: underline;
 }
 
+textarea.form-control {
+  height: 100px;
+}
 #signup-content {
   padding:45px;
   background: white;
