@@ -16,7 +16,7 @@
           <h4 class="pull-right">$<%= campground.price %>/night</h4>
           <h4><a href="#"><%=campground.name%></a></h4>
           <p><%= campground.description%></p>
-          <p><em>Submitted By <%= campground.author.username %></em><span class="pull-right"><em>Created: <%= campground.created.toLocaleDateString()%></em></span></p>
+          <p><em>Submitted By <%= campground.author.username %></em><span class="pull-right"><em>Created: <%= campground.created.toLocaleDateString('sv-SE')%></em></span></p>
 
           <% if(currentUser && campground.author.id.equals(currentUser._id)) {%>
             <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
