@@ -50,6 +50,20 @@ textarea.form-control {
 #benefits p{
   margin: 0 0 15px 0;
 }
+
+.sidebar {
+    background-color: rgba(255,255,255,0);
+    position: absolute;
+    background: white;
+    /*top: 0;*/
+    right: 0;
+    /*bottom: 0;*/
+    width: 340px;
+    padding: 0 0 60px 18px;
+    box-sizing: border-box;
+    z-index: 600;
+}
+
 .btn {
   font-size: 13px;
   text-transform: uppercase;
@@ -68,8 +82,10 @@ textarea.form-control {
 }
 
 .gridfix {
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  display: inline;
+  position: inherit;
 }
 
 .padFix {
