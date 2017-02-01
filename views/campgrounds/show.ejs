@@ -16,7 +16,8 @@
           <h4 class="pull-right">$<%= campground.price %>/night</h4>
           <h4><a href="#"><%=campground.name%></a></h4>
           <p><%= campground.description%></p>
-          <p><em>Submitted By <%= campground.author.username %></em></p>
+          <p><em>Submitted By <%= campground.author.username %></em><span class="pull-right"><em>Created: <%= campground.created.toLocaleDateString()%></em></span></p>
+
           <% if(currentUser && campground.author.id.equals(currentUser._id)) {%>
             <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
             <form class="inlineButton" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
@@ -32,11 +33,11 @@
       <% } else { %>
         <form action="/campgrounds/<%= campground._id %>/comments" method="post">
         <div class="form-group">
-        <textarea class="form-control" type="text" name="comment[text]" placeholder="Comment"></textarea>
+        <textarea class="form-control" type="text" name="comment[text]" placeholder="Write your comment here..."></textarea>
         </div>
         <div class="text-right">
-        <!-- <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Leave a review</a> -->
-        <button class="btn btn-success">Leave a review</button>
+        <!-- <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Leave a comment</a> -->
+        <button class="btn btn-success">Leave a comment</button>
         </div>
         </form>
         <% } %>

@@ -18,14 +18,23 @@
           <div class="thumbnail">
             <img src="<%= campground.image %>">
             <div class="caption">
-            <h4><%= campground.name %></h4>
+              <h4><%= campground.name %></h4>
+              <p> <%= campground.description.substring(0, 100) %>...</p>
+              <ul class="list-inline list-unstyled">
+                <li><em>By: <%= campground.author.username %></em></li>
+                <li>|</li>
+                <li><span><i class="glyphicon glyphicon-calendar"></i> <%= campground.created.toLocaleDateString()%></span></li>
+                <li>|</li>
+                <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+                </ul>
             </div>
             <p>
-            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+            <a href="/campgrounds/<%= campground._id %>" class="btn btn-default">Read MOre...</a>
             </p>
           </div>
         </div>
         <% }); %>
+
     <div class="col-md-4 hidden-sm hidden-xs">
       <div class="sidebar">
         <p>CONTENT</p>
