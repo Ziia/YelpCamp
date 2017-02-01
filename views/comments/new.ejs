@@ -2,18 +2,20 @@
 
 <div class="container">
   <div class="row">
-    <h1 class="new">Add New Comment to <%= campground.name %></h1>
+    <h2 class="new">Add New Comment to <%= campground.name %></h2>
 
     <div class="smallCenter">
+      <div class="padFix">
 
       <form action="/campgrounds/<%= campground._id %>/comments" method="post">
           <div class="form-group">
-            <input class="form-control" type="text" name="comment[text]" placeholder="text">
+            <textarea class="form-control" type="text" name="comment[text]" placeholder="text"></textarea>
           </div>
           <button class="btn btn-default btn-lg btn-block">Submit!</button>
       </form>
 
       <a href="/campgrounds">Back</a>
+    </div>
     </div>
 
   </div>

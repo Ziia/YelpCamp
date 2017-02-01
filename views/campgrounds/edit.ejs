@@ -1,9 +1,10 @@
 <% include ../partials/header %>
 <div class="container">
   <div class="row">
-    <h1 class="new">Edit <%= campground.name %></h1>
+    <h2 class="new">Edit <%= campground.name %></h2>
 
     <div class="smallCenter">
+      <div class="padFix">
 
       <form action="/campgrounds/<%= campground._id %>/?_method=PUT" method="post">
           <div class="form-group">
@@ -22,6 +23,7 @@
       </form>
 
       <a href="/campgrounds">Back</a>
+    </div>
     </div>
 
   </div>
