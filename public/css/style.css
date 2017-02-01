@@ -3,6 +3,7 @@ body {
   background: -webkit-linear-gradient(to left, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-attachment: fixed;
+  margin-top: 75px;
 }
 
 h2, h3 {
@@ -30,6 +31,7 @@ a.register {
 textarea.form-control {
   height: 100px;
 }
+
 #signup-content {
   padding:45px;
   background: white;
